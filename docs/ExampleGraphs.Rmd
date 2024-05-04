@@ -1,0 +1,17 @@
+This is for my class where we are supposed to be creating a package in R.  This is just a means of loading in said package and displaying some graphs of it.
+
+```{r}
+library(LeviFlagWeather)
+library(ggplot2)
+library(lubridate)
+
+example_data <- data.frame(Flagstaff_Weather)
+
+head(example_data)
+
+ggplot(data = example_data, aes(x = ymd(DATE), y = PRCP)) + 
+  geom_bar(stat = "identity") +
+  labs(x = "Date", y = "Precipitation (inches)",
+       title = "Precipitation in Flagstaff over Time")
+```
+
